@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import requests
-import os
+from os import environ
 app = Flask("MyApp")
 
 def send_simple_message(email):
@@ -28,4 +28,4 @@ def sign_up():
     send_simple_message(email)
     return "Email Sent to: {}".format(email)
 
-app.run(host='0.0.0.0',debug=True, port=int(os.environ.get('PORT', 5000)))
+app.run(host='0.0.0.0',debug=True, port=environ.get("PORT", 5000))
