@@ -1,1 +1,1 @@
-web: python flask-learn.py
+worker: python flask-learn.py
